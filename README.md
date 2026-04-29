@@ -1,16 +1,6 @@
-## Práticas-DevOps-2026
+## Práticas-DevOps-2026 🖥️📝
 
 ### Repositório para trabalho prático da disciplina de devOps
-
-
-## Ferramentas utilizadas
-
-## Comandos bases
-
-git checkout -b feature/backup-script #Cria br## Práticas-DevOps-2026 🖥️📝
-
-### Repositório para trabalho prático da disciplina de devOps
-
 
 ## Ferramentas utilizadas
 
@@ -21,7 +11,7 @@ git checkout -b feature/backup-script #Cria br## Práticas-DevOps-2026 🖥️�
 ## Comandos relevantes 📚
 
 ```bash
-    // Cria branch backup
+    // Cria a branch backup
     git checkout -b feature/backup-script 
 ```
 
@@ -32,6 +22,4 @@ git checkout -b feature/backup-script #Cria br## Práticas-DevOps-2026 🖥️�
 ```bash
     // Empurra as alterações para o github
     git push origin feature/backup-script 
-```anch backup
-
-touch backup/backup_sistema.sh cria arquivo dentro da pasta
+```
