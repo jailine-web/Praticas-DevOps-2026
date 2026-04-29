@@ -4,7 +4,7 @@
 #### O objetivo é simular atividades comuns no dia a dia de quem trabalha com DevOps,
 #### como análise de logs, automação de tarefas e configuração de servidores.
 
-## Ferramentas utilizadas
+## Ferramentas utilizadas ⚒️
 
     * Git
     * GitHub
@@ -27,6 +27,5 @@
 ```
 
 ### Autores:
-
     * Jailine Almeida 👩🏻‍💻
     * Rondinele Silva 👨🏻‍💻
