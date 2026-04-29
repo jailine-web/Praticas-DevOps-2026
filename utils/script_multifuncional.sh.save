@@ -11,20 +11,20 @@
 #	$ ./script_multifuncional.sh [opção] [argumentos]
 #	$ ./script_multifuncional.sh --menu (para modo interativo)
 #
-# ------------------------------------------------------------------------ #
-# Variaveis -------------------------------------------------------------- #
+# ------------------------------------------------------------------------#
+# Variaveis --------------------------------------------------------------#
 OPERACAO="$1"
 ARG1="$2"
 ARG2="$3"
 opcao=0
 
-# fUNCTIONS -------------------------------------------------------------- #
+# fUNCTIONS --------------------------------------------------------------#
 show_menu(){
 	clear
 	echo "======================================================="
 	echo "	    OPERAÇÕES DE ARQUIVO - Ferramentas DevOps"
 
-	echo "======================================================="
+	echo "=========================================="
     	echo ""
     	echo "1. Renomear arquivos (add prefix/suffix)"
     	echo "2. Converter imagens (JPG to PNG)"
@@ -38,7 +38,7 @@ show_menu(){
 	
 }
 
-# MAIN CODE -------------------------------------------------------------- #
+# MAIN CODE --------------------------------------------------------------- #
 
 # Suporte para modo de linha de comando
 if [ "$OPERACAO" = "--menu" ] || [ -z "$OPERACAO" ]; then
@@ -70,15 +70,14 @@ else
         "extract") extract_files ;;
         "chmod") change_permissions ;;
         "search") search_files ;;
-        *) echo "Usage: $0 [--menu|rename|convert|compress|extract|chmod|search]";;
+        *) echo "Usage: $0 [--menu|rename|convert|compress|extract|chmod|search]" ;;
     esac
 
 fi
 
 rename(){
-    if [ $OPERACAO -eq "rename" ]; then
-    local nome_antigo;
-    local 
-}
+	if [ " " ]
+
+
 
 
