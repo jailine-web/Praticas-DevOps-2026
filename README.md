@@ -25,3 +25,8 @@
     // Empurra as alterações para o github
     git push origin feature/backup-script 
 ```
+
+### Autores:
+
+    * Jailine Almeida 👩🏻‍💻
+    * Rondinele Silva 👨🏻‍💻
