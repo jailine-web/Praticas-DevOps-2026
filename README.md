@@ -1,6 +1,8 @@
 ## Práticas-DevOps-2026 🖥️📝
 
-### Repositório para trabalho prático da disciplina de devOps
+#### Repositório desenvolvido para as atividades práticas da disciplina de DevOps.  
+#### O objetivo é simular atividades comuns no dia a dia de quem trabalha com DevOps,
+#### como análise de logs, automação de tarefas e configuração de servidores.
 
 ## Ferramentas utilizadas
 
