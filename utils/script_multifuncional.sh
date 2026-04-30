@@ -12,42 +12,67 @@
 #	$ ./script_multifuncional.sh --menu (para modo interativo)
 #
 # ------------------------------------------------------------------------ #
+
 # Variaveis -------------------------------------------------------------- #
 OPERACAO="$1"
 ARG1="$2"
 ARG2="$3"
 opcao=0
 
-# fUNCTIONS -------------------------------------------------------------- #
-show_menu(){
-	clear
-	echo "======================================================="
-	echo "	    OPERAÇÕES DE ARQUIVO - Ferramentas DevOps"
+# FUNCTIONS -------------------------------------------------------------- #
 
-	echo "======================================================="
-    	echo ""
-    	echo "1. Renomear arquivos (add prefix/suffix)"
-    	echo "2. Converter imagens (JPG to PNG)"
-    	echo "3. Comprimir arquivos/diretórios"
-    	echo "4. Extraia arquivos compactados"
-    	echo "5. Alterar permissões de arquivo"
-    	echo "6. Pesquise arquivos por padrão"
-    	echo "0. Sair"
-    	echo ""
-    	echo -n "Escolher uma opção: "
-	
+show_menu(){
+    clear
+    echo "======================================================="
+    echo "        OPERAÇÕES DE ARQUIVO - Ferramentas DevOps"
+    echo "======================================================="
+    echo ""
+    echo "1. Renomear arquivos"
+    echo "2. Converter imagens (JPG to PNG)"
+    echo "3. Comprimir arquivos/diretórios"
+    echo "4. Extrair arquivos compactados"
+    echo "5. Alterar permissões"
+    echo "6. Buscar arquivos"
+    echo "0. Sair"
+    echo ""
+    echo -n "Escolher uma opção: "
+}
+
+rename(){
+    local nome_antigo
+    local nome_novo
+
+    # modo linha de comando
+    if [ -n "$ARG1" ] && [ -n "$ARG2" ]; then
+        nome_antigo="$ARG1"
+        nome_novo="$ARG2"
+    else
+        # modo interativo
+        echo -n "Entre com o nome do arquivo antigo: "
+        read nome_antigo
+
+        echo -n "Entre com o nome do novo arquivo: "
+        read nome_novo
+    fi
+
+    # execução
+    if [ -f "$nome_antigo" ]; then
+        mv "$nome_antigo" "$nome_novo"
+        echo "Arquivo renomeado com sucesso!"
+    else
+        echo "Arquivo não encontrado!"
+    fi
 }
 
 # MAIN CODE -------------------------------------------------------------- #
 
-# Suporte para modo de linha de comando
 if [ "$OPERACAO" = "--menu" ] || [ -z "$OPERACAO" ]; then
     while true; do
         show_menu
         read opcao
-        
+
         case $opcao in
-            1) rename_files ;;
+            1) rename ;;
             2) convert_images ;;
             3) compress_files ;;
             4) extract_files ;;
@@ -56,29 +81,19 @@ if [ "$OPERACAO" = "--menu" ] || [ -z "$OPERACAO" ]; then
             0) echo "Até logo!"; exit 0 ;;
             *) echo "Opção inválida" ;;
         esac
-        
+
         echo ""
         echo -n "Pressione enter para continuar..."
         read
     done
 else
-    # Modo linha de comando
     case "$OPERACAO" in
-        "rename") rename_files ;;
+        "rename") rename ;;
         "convert") convert_images ;;
         "compress") compress_files ;;
         "extract") extract_files ;;
         "chmod") change_permissions ;;
         "search") search_files ;;
-        *) echo "Usage: $0 [--menu|rename|convert|compress|extract|chmod|search]";;
+        *) echo "Usage: $0 [--menu|rename|convert|compress|extract|chmod|search]" ;;
     esac
-
 fi
-
-rename(){
-    if [ $OPERACAO -eq "rename" ]; then
-    local nome_antigo;
-    local 
-}
-
-
