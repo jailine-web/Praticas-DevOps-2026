@@ -38,7 +38,7 @@ show_menu(){
     echo -n "Escolher uma opção: "
 }
 
-rename(){
+renomear(){
     local nome_antigo
     local nome_novo
 
@@ -64,6 +64,47 @@ rename(){
     fi
 }
 
+converter_imagens(){
+
+    local imagem_antiga
+    local imagem_nova
+
+    if [ -n "$ARG1" ] && [ -n "$ARG2" ]; then
+        imagem_antiga="$ARG1"
+        imagem_nova="$ARG2"
+
+    else
+        echo -n "Insira a imagem que deseja converter (ex foto.png): "
+        read imagem_antiga
+
+        echo -n "Insira o nome da imagem que deseja como resultado (ex foto.jpg): "
+        read imagem_nova
+
+    fi
+
+    if [ -f "$imagem_antiga" ]; then
+
+    # verifica se magick está disponível no PATH
+    if command -v magick >/dev/null 2>&1; then
+        CMD="magick"
+    else
+        # fallback para caminho padrão no Windows (Git Bash)
+        CMD="C:/Program Files/ImageMagick-7.1.2-Q16-HDRI/magick.exe"
+    fi
+
+    # executa conversão
+    if "$CMD" "$imagem_antiga" "$imagem_nova"; then
+        echo "Imagem convertida com sucesso! ✔"
+    else
+        echo "Erro na conversão!"
+    fi
+
+else 
+    echo "Arquivo não encontrado!"
+fi
+
+}
+
 # MAIN CODE -------------------------------------------------------------- #
 
 if [ "$OPERACAO" = "--menu" ] || [ -z "$OPERACAO" ]; then
@@ -72,8 +113,8 @@ if [ "$OPERACAO" = "--menu" ] || [ -z "$OPERACAO" ]; then
         read opcao
 
         case $opcao in
-            1) rename ;;
-            2) convert_images ;;
+            1) renomear ;;
+            2) converter_imagens ;;
             3) compress_files ;;
             4) extract_files ;;
             5) change_permissions ;;
@@ -88,8 +129,8 @@ if [ "$OPERACAO" = "--menu" ] || [ -z "$OPERACAO" ]; then
     done
 else
     case "$OPERACAO" in
-        "rename") rename ;;
-        "convert") convert_images ;;
+        "rename") renomear ;;
+        "convert") converter_imagens ;;
         "compress") compress_files ;;
         "extract") extract_files ;;
         "chmod") change_permissions ;;
