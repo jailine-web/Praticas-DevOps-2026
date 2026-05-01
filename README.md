@@ -25,6 +25,10 @@
     // Empurra as alterações para o github
     git push origin feature/backup-script 
 ```
+```bash
+    // Comando para instalar o imageMagick
+    winget install ImageMagick.ImageMagick
+```
 
 ### Autores:
     * Jailine Almeida 👩🏻‍💻
