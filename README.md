@@ -32,6 +32,16 @@
 
 ## Sobre o desenvolvimento
 
+| Comandos   | Função       |
+|------------|--------------|
+|  sort      | Organiza os itens em ordem alfabética |
+|    >       | Responsável por salvar o resultado em um arquivo |
+|  -F\"      | Define o separador de campo como " |
+|  | uniq -c | Conta quantas vezes cada método apareceu |
+|  wc -l <   | Retorna a quantidade de linhas existentes em um arquivo, apenas os números das linhas. |
+|  head -5   | Mostra as primeiras 5 linhas de um arquivo |
+|  grep -E   | Apermite buscar padrões mais complexos usando regex avançada (-E) |
+
 #### Awk: Ferramenta de linha de comando que lê, divide e processa texto em colunas, cada coluna é representada
 #### por $ e o índice dela. Ex: $1 corresponde a 1° coluna, $2 é a segunda coluna e assim sucessivamente, sendo
 #### bom para arquivos estruturados dividindo as linhas por espaços.
@@ -44,15 +54,7 @@
 
 #### | sort -nr: Organiza do maior para o menor | -n --> numérico , -r --> reverso
 
-| Comandos   | Função       |
-|------------|--------------|
-|  sort      | Organiza os itens em ordem alfabética |
-|    >       | Responsável por salvar o resultado em um arquivo |
-|  -F\"      | Define o separador de campo como " |
-|  | uniq -c | Conta quantas vezes cada método apareceu |
-|  wc -l <   | Retorna a quantidade de linhas existentes em um arquivo, apenas os números das linhas. |
-|  head -5   | Mostra as primeiras 5 linhas de um arquivo |
-|  grep -E   | Apermite buscar padrões mais complexos usando regex avançada (-E) |
+
 
 ### Autores:
     * Jailine Almeida 👩🏻‍💻
