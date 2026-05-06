@@ -1,1 +1,3 @@
-Para o projeto da ScreenMatch, a melhor escolha é o Nginx, pois ele é mais eficiente para servir conteúdo estático e suporta muitos acessos simultâneos com baixo consumo de recursos. Já o Apache HTTP Server, embora seja bastante completo, utiliza mais memória nesse tipo de cenário e não é tão eficiente sob alto tráfego. Assim, o Nginx é mais indicado por oferecer melhor desempenho e escalabilidade.
+Para o projeto da ScreenMatch, a melhor escolha é o Nginx, pois ele é mais eficiente para servir conteúdo estático e suporta muitos acessos simultâneos com baixo consumo de recursos. 
+Já o Apache HTTP Server, embora seja bastante completo, utiliza mais memória nesse tipo de cenário e não é tão eficiente sob alto tráfego. Assim, o Nginx é mais indicado por oferecer 
+melhor desempenho e escalabilidade.
